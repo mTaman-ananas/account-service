@@ -1,2 +1,7 @@
 # account-service
-A lap project that interduces hexagonal architecture guide. code quality and internationalization. It is based on Spring Boot 3.0 and Java 19.
+A lap project that interduces good stuff, curently:
+1. Hexagonal architecture guide. 
+1. Code quality best practise.
+1. Internationalization with Localise.
+
+It is based on Spring Boot 3.0 and Java 19.
