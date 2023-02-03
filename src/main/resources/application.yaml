@@ -1,0 +1,18 @@
+hexarch:
+  account:
+    transferThreshold: 10000
+  translation:
+    api_keys: ${PROJECTS_API_KEYS}
+    # projects_api_keys: "{adirect_service}:{fKVUc_ZNsooPIeOGU_xe-w};{customer_portal}:{FOVohwVoNNckIAb01bvUhg};{employee_portal}:{x7Fq8wl59-Znrt1mByYxAA};{product_service}:{TFtMANwkQovMBIoR-QWNyg}"
+
+spring:
+  jpa:
+    open-in-view: false
+    properties:
+      jakarta:
+        persistence:
+          sharedCache:
+            mode: UNSPECIFIED
+  messages:
+    basename: language/messages
+
