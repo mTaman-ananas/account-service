@@ -29,7 +29,6 @@ public class ProductsController {
         return modelAndView;
     }
 
-
     private List<Product> fetchProducts() {
         Locale locale = LocaleContextHolder.getLocale();
 
@@ -44,7 +43,6 @@ public class ProductsController {
         product = new Product();
         product.setName("washingmachine");
 
-
         product.setPrice(localizePrice(locale, 152637.76));
         product.setLastUpdated(localizeDate(LocalDate.of(2021, Month.SEPTEMBER, 20)));
         products.add(product);
@@ -55,7 +53,6 @@ public class ProductsController {
     private String localizeDate(final LocalDate date) {
         return DateTimeFormatter.ISO_LOCAL_DATE.format(date);
     }
-
 
     private String localizePrice(final Locale locale, final Double price) {
         NumberFormat numberFormat = NumberFormat.getInstance(locale);
