@@ -1,4 +1,4 @@
-# account-service
+# Account Service
 A lap project that interduces good stuff, curently:
 1. Hexagonal architecture guide. 
 1. Code quality best practise.
