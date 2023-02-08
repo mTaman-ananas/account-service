@@ -35,13 +35,13 @@ public class ProductsController {
         List<Product> products = new ArrayList<>();
 
         Product product = new Product();
-        product.setName("television");
+        product.setName("prod.tv");
         product.setPrice(localizePrice(locale, 15678.43));
         product.setLastUpdated(localizeDate(LocalDate.of(2021, Month.SEPTEMBER, 22)));
         products.add(product);
 
         product = new Product();
-        product.setName("washingmachine");
+        product.setName("prod.wm");
 
         product.setPrice(localizePrice(locale, 152637.76));
         product.setLastUpdated(localizeDate(LocalDate.of(2021, Month.SEPTEMBER, 20)));
