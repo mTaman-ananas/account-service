@@ -6,13 +6,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.Month;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
+import static java.text.NumberFormat.getInstance;
+import static java.time.format.DateTimeFormatter.ofLocalizedDate;
+import static java.time.format.FormatStyle.FULL;
 
 @Controller
 public class ProductsController {
@@ -37,26 +39,38 @@ public class ProductsController {
         Product product = new Product();
         product.setName("prod.tv");
         product.setPrice(localizePrice(locale, 15678.43));
-        product.setLastUpdated(localizeDate(LocalDate.of(2021, Month.SEPTEMBER, 22)));
+        product.setLastUpdated(localizeDate(locale, LocalDate.of(2021, Month.SEPTEMBER, 22)));
         products.add(product);
 
         product = new Product();
         product.setName("prod.wm");
-
         product.setPrice(localizePrice(locale, 152637.76));
-        product.setLastUpdated(localizeDate(LocalDate.of(2021, Month.SEPTEMBER, 20)));
+        product.setLastUpdated(localizeDate(locale, LocalDate.of(2021, Month.SEPTEMBER, 20)));
+        products.add(product);
+
+        product = new Product();
+        product.setName("prod.frdg");
+        product.setPrice(localizePrice(locale, 162547.53));
+        product.setLastUpdated(localizeDate(locale, LocalDate.of(2022, Month.OCTOBER, 10)));
+        products.add(product);
+
+        product = new Product();
+        product.setName("prod.cooker");
+        product.setPrice(localizePrice(locale, 113548.33));
+        product.setLastUpdated(localizeDate(locale, LocalDate.of(2023, Month.JANUARY, 2)));
         products.add(product);
 
         return products;
     }
 
-    private String localizeDate(final LocalDate date) {
-        return DateTimeFormatter.ISO_LOCAL_DATE.format(date);
+    private String localizeDate(final Locale locale, final LocalDate date) {
+        return ofLocalizedDate(FULL)
+                .withLocale(locale)
+                .format(date);
     }
 
     private String localizePrice(final Locale locale, final Double price) {
-        NumberFormat numberFormat = NumberFormat.getInstance(locale);
-        return numberFormat.format(price);
+        return getInstance(locale).format(price);
     }
 
 }
