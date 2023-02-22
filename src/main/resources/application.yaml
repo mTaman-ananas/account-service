@@ -14,5 +14,5 @@ spring:
           sharedCache:
             mode: UNSPECIFIED
   messages:
-    basename: language/messages
+    basename: i18n/messages
 
