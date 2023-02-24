@@ -60,6 +60,12 @@ public class ProductsController {
         product.setLastUpdated(localizeDate(locale, LocalDate.of(2023, Month.JANUARY, 2)));
         products.add(product);
 
+        product = new Product();
+        product.setName("prod.table");
+        product.setPrice(localizePrice(locale, 9138.33));
+        product.setLastUpdated(localizeDate(locale, LocalDate.of(2022, Month.DECEMBER, 7)));
+        products.add(product);
+
         return products;
     }
 
